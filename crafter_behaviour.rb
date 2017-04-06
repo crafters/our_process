@@ -1,39 +1,39 @@
 while true
 	if tem algum cartão em `Staging/Draft`
-		move o cartão para `Review`
-		avisa no slack ao responsável pelo cartão
-		testa a funcionalidade em staging
+		mova o cartão para `Review`
+		avise no slack ao responsável pelo cartão
+		teste a funcionalidade em staging
 		if funcionou direito
-			move o cartão para `Ready for Delivery`
+			mova o cartão para `Ready for Delivery`
 		else
-			avisa ao responsável pelo cartão dos problemas
-			bloqueia o cartão
+			avise ao responsável pelo cartão dos problemas
+			bloqueie o cartão
 		end
 	else
 		if tem algum cartão em `PR Ready`
-			move o cartão para `PR Review`
-			avisa no slack ao responsável pelo cartão
-			analisa o código no github
+			mova o cartão para `PR Review`
+			avise no slack ao responsável pelo cartão
+			analise o código no github
 			if você estiver satisfeito
-				aprova o Pull Request
+				aprove o Pull Request
 			else 
-				faz os comentários no código, pedindo mudanças ou tirando dúvidas
+				faça os comentários no código, pedindo mudanças ou tirando dúvidas
 			end
-			avisa aos responsável pelo cartão
+			avise aos responsável pelo cartão
 		else
-			move o primeiro cartão da coluna `Selected` para a coluna `Working on`
+			mova o primeiro cartão da coluna `Selected` para a coluna `Working on`
 			while seu cartão não foi aprovado em staging
-				cria uma branch no github a partir da branch develop com um bom nome 
+				crie uma branch no github a partir da branch develop com um bom nome 
 				while você não criou um PR
 					tire_duvidas
 					while você não está satisfeito com o seu trabalho
 						programe
 					end
-					sobe seu código pro repositório remoto
-					cria um Pull Request (PR)
+					suba seu código pro repositório remoto
+					crie um Pull Request (PR)
 				end
-				faz um comentário no cartão com link para o PR
-				move o cartão para a coluna `PR Review`
+				faça um comentário no cartão com link para o PR
+				mova o cartão para a coluna `PR Review`
 				while ninguém revisou seu código
 					notifique
 				end
@@ -42,11 +42,11 @@ while true
 					while você não está satisfeito com o seu trabalho
 						programe
 					end
-					sobe seu código pro repositório remoto
-					avisa no slack ao seu revisor
+					suba seu código pro repositório remoto
+					avise no slack ao seu revisor
 				end
-				faz merge do seu código com a develop if build no cli passou
-				move seu cartão para a coluna `Staging/Draft`
+				faça merge do seu código com a develop if build no cli passou
+				mova seu cartão para a coluna `Staging/Draft`
 				while ninguém revisou em staging
 					notifique
 				end
@@ -67,14 +67,14 @@ end
 	
 def tire_duvidas
 	while tem dúvidas
-		tira dúvidas no slack no canal relacionado ao projeto ou no developers
+		tire dúvidas no slack no canal relacionado ao projeto ou no developers
 	end
 end
 	
 def programe
-	programa pra caraleo pra resolver o problema no cartão
-	roda o build no ambiente local ('rubocop -Ra && rspec')
+	programe pra caraleo pra resolver o problema no cartão
+	rode o build no ambiente local ('rubocop -Ra && rspec')
 	while not (todos os testes passaram and cobertura 100% and rubocop não identificou ofensas)
-		faz alterações no código
+		faça alterações no código
 	end
 end
