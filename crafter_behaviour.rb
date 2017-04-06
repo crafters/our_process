@@ -1,6 +1,7 @@
 while true
 	if tem algum cartão em `Staging/Draft`
 		move o cartão para `Review`
+		avisa no slack ao responsável pelo cartão
 		testa a funcionalidade em staging
 		if funcionou direito
 			move o cartão para `Ready for Delivery`
@@ -11,6 +12,7 @@ while true
 	else
 		if tem algum cartão em `PR Ready`
 			move o cartão para `PR Review`
+			avisa no slack ao responsável pelo cartão
 			analisa o código no github
 			if você estiver satisfeito
 				aprova o Pull Request
