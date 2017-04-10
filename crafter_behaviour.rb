@@ -7,7 +7,6 @@ while true
 			mova o cartão para `Ready for Delivery`
 		else
 			avise ao responsável pelo cartão dos problemas
-			bloqueie o cartão
 		end
 	else
 		if tem algum cartão em `PR Ready`
