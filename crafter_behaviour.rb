@@ -1,9 +1,14 @@
 while true
-	if tem algum cartão em `Staging/Draft`
+	if tem algum cartão em `Ready for Delivery` && não tem nenhum cartão em `Staging/Draft` relativo ao mesmo projeto
+		pergunte no slack se está liberado para fazer deploy
+		if resposta positiva 
+			faça o deploy
+		end
+	elsif tem algum cartão em `Staging/Draft`
 		mova o cartão para `Review`
 		avise no slack ao responsável pelo cartão
 		teste a funcionalidade em staging
-		if funcionou direito
+		if funcionou corretamente
 			mova o cartão para `Ready for Delivery`
 		else
 			avise ao responsável pelo cartão dos problemas
