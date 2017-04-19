@@ -3,6 +3,7 @@ while true
 		pergunte no slack se está liberado para fazer deploy
 		if resposta positiva 
 			faça o deploy
+			avise ao cliente que está em produção quando o deploy terminar
 		end
 	elsif tem algum cartão em `Staging/Draft`
 		mova o cartão para `Review`
@@ -51,6 +52,7 @@ while true
 				end
 				faça merge do seu código com a develop if build no cli passou
 				mova seu cartão para a coluna `Staging/Draft`
+				avise o cliente que está em staging quando o build terminar
 				while ninguém revisou em staging
 					notifique
 				end
