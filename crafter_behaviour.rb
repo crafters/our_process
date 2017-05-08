@@ -25,6 +25,9 @@ while true
 				faça os comentários no código, pedindo mudanças ou tirando dúvidas
 			end
 			avise aos responsável pelo cartão
+		elsif você tem cartões em andamento no fluxo && não existem cartões de outras pessoas precisando de atenção
+			solicite regularmente atenção ao seu cartão
+			ocio_criativo
 		else
 			mova o primeiro cartão da coluna `Selected` para a coluna `Working on`
 			while seu cartão não foi aprovado em staging
@@ -79,8 +82,12 @@ end
 	
 def programe
 	programe pra caraleo pra resolver o problema no cartão
-	rode o build no ambiente local ('rubocop -Ra && rspec')
+	rode o build no ambiente local ('rubocop -Da && rspec')
 	while not (todos os testes passaram and cobertura 100% and rubocop não identificou ofensas)
 		faça alterações no código
 	end
+end
+	
+def ocio_criativo
+	leia um livro || leia um artigo || escreva um post || tente contatos de venda
 end
