@@ -41,7 +41,7 @@ while true
 					crie um Pull Request (PR)
 				end
 				faça um comentário no cartão com link para o PR
-				mova o cartão para a coluna `PR Review`
+				mova o cartão para a coluna `PR Ready`
 				while ninguém revisou seu código
 					notifique
 				end
