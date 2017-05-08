@@ -1,5 +1,5 @@
 while true
-	if tem algum cartão em `Ready for Delivery` && não tem nenhum cartão em `Staging/Draft` relativo ao mesmo projeto
+	if tem algum cartão em `Ready for Delivery` && não tem nenhum cartão em [`Staging/Draft`, `Review`] relativo ao mesmo projeto
 		pergunte no slack se está liberado para fazer deploy
 		if resposta positiva 
 			faça o deploy
